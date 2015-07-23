@@ -106,7 +106,8 @@ class LinkedList
 	end
 
 	def distance(starting_index, ending_index)
-		find_by_value(ending_index)-find_by_value(starting_index)
+		return if find_by_value(ending_index) == nil || find_by_value(starting_index) == nil
+		(find_by_value(ending_index)-find_by_value(starting_index)).abs
 	end
 end
 

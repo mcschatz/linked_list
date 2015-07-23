@@ -4,7 +4,7 @@ SimpleCov.start
 gem 'minitest', '~>5.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './list'
+require_relative 'list'
 
 
 class LinkedListTest < Minitest::Test
@@ -241,19 +241,31 @@ class LinkedListTest < Minitest::Test
  		assert_equal 3, list.distance("1", "4")
  	end
 
- 	# def test_it_returns_nil_if_node_not_present
- 	# 	list = LinkedList.new
- 	# 	list.append('1')
- 	# 	list.append('2')
- 	# 	list.append('3')
- 	# 	list.append('4')
+ 	def test_it_returns_nil_if_node_not_present
+ 		list = LinkedList.new
+ 		list.append('1')
+ 		list.append('2')
+ 		list.append('3')
+ 		list.append('4')
 
- 	# 	assert_equal nil, list.distance("1", "9")
- 	# end
+ 		assert_equal nil, list.distance("1", "9")
+ 	end
 
- 	# def test_it_returns_nil_if_list_is_empty
- 	# 	list = LinkedList.new
+ 	def test_it_returns_nil_if_list_is_empty
+ 		list = LinkedList.new
 
- 	# 	assert_equal nil, list.distance("1", "4")
- 	# end
+ 		assert_equal nil, list.distance("1", "4")
+ 	end
+
+ 	def test_it_returns_nil_if_numbers_are_inverse
+ 		list = LinkedList.new
+ 		list.append('1')
+ 		list.append('2')
+ 		list.append('3')
+ 		list.append('4')
+
+ 		assert_equal 3, list.distance("4", "1")
+ 	end
+
+
 end
