@@ -1,9 +1,9 @@
 require_relative 'node'
 
 class LinkedList
-	attr_accessor :head, :data
+	attr_accessor :head
 
-	def initialize(data = nil)
+	def initialize
 		@head = nil
 	end
 
@@ -61,7 +61,7 @@ class LinkedList
 
 	def head_value
 		current = @head
-	end 
+	end
 
 	def tail_value
 		current = @head
@@ -91,7 +91,7 @@ class LinkedList
 
 	def remove_by_index(index)
 		if index == 0
-		@head = find_by_index(1) 
+		@head = find_by_index(1)
 		elsif index < 0 || index >= count
 			"error"
 		else
@@ -110,7 +110,3 @@ class LinkedList
 		(find_by_value(ending_index)-find_by_value(starting_index)).abs
 	end
 end
-
-
-
-

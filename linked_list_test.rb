@@ -12,7 +12,7 @@ class LinkedListTest < Minitest::Test
  	def test_one_node_can_append_a_node
  		list = LinkedList.new
 		list.append('1')
- 		
+
  		assert_equal '1', list.head.data
  	end
 
@@ -20,7 +20,7 @@ class LinkedListTest < Minitest::Test
  		list = LinkedList.new
 		list.append('1')
  		list.append('2')
- 		
+
  		assert_equal '2', list.head.next_node.data
  	end
 
@@ -28,7 +28,7 @@ class LinkedListTest < Minitest::Test
  		list = LinkedList.new
 		list.append('1')
  		list.append(nil)
- 		
+
  		assert_equal nil, list.head.next_node.data
  	end
 
@@ -37,14 +37,14 @@ class LinkedListTest < Minitest::Test
  		list.append('1')
  		list.append('2')
  		list.prepend('3')
- 		
+
  		assert_equal '3', list.head.data
 	end
 
 	def test_a_node_can_be_prepended_an_empty_list
  		list = LinkedList.new
  		list.prepend('1')
- 		
+
  		assert_equal '1', list.head.data
 	end
 
@@ -52,7 +52,7 @@ class LinkedListTest < Minitest::Test
 		list = LinkedList.new
 		list.append('1')
 		list.prepend(nil)
-		
+
 		assert_equal nil, list.head.data
 	end
 
@@ -62,7 +62,7 @@ class LinkedListTest < Minitest::Test
  		list.append('2')
  		list.append('3')
  		list.insert('4', 2)
- 		
+
  		assert_equal '4', list.head.next_node.next_node.data
  	end
 
@@ -72,7 +72,7 @@ class LinkedListTest < Minitest::Test
  		list.append('2')
  		list.append('3')
  		list.insert('4', 1)
- 		
+
  		assert_equal '4', list.head.next_node.data
  	end
 
@@ -81,7 +81,7 @@ class LinkedListTest < Minitest::Test
  		list.append('1')
  		list.append('2')
  		list.append('3')
- 		
+
  		assert list.includes?('3')
  	end
 
@@ -90,7 +90,7 @@ class LinkedListTest < Minitest::Test
  		list.append('1')
  		list.append('2')
  		list.append('3')
- 		
+
  		refute list.includes?('4')
  	end
 
@@ -100,13 +100,13 @@ class LinkedListTest < Minitest::Test
  		list.append('2')
  		list.append('3')
  		list.pop
- 		
+
  		assert_equal nil, list.head.next_node.next_node
  	end
 
  	# def test_it_can_handle_pop_if_the_list_is_empty
  	# 	list = LinkedList.new
- 	# 	
+ 	#
  	# 	assert_equal "List is empty", list.pop
  	# end
 
@@ -121,7 +121,7 @@ class LinkedListTest < Minitest::Test
 
  	def test_it_can_count_the_elements_of_an_empty_list
  		list = LinkedList.new
- 		
+
  		assert_equal 0, list.count
  	end
 
@@ -146,7 +146,7 @@ class LinkedListTest < Minitest::Test
  		assert_equal "2", list.tail_value.data
  	end
 
- 	# def test_it_can_put_the_value_of_no_tail
+ 	# def test_it_can_return_nil_if_there_is_no_tail
  	# 	list = LinkedList.new
  	# 	assert_equal nil, list.tail_value
  	# end
@@ -257,7 +257,7 @@ class LinkedListTest < Minitest::Test
  		assert_equal nil, list.distance("1", "4")
  	end
 
- 	def test_it_returns_nil_if_numbers_are_inverse
+ 	def test_it_can_find_the_absolute_value_between_two_nodes
  		list = LinkedList.new
  		list.append('1')
  		list.append('2')
@@ -266,6 +266,4 @@ class LinkedListTest < Minitest::Test
 
  		assert_equal 3, list.distance("4", "1")
  	end
-
-
 end
